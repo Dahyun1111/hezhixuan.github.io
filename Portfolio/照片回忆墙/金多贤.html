@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致金多贤的告白</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9bb3, #ffd6e0);
+            font-family: "Microsoft Yahei", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ff4d79;
+            transform: rotate(-45deg);
+            animation: fall 5s linear infinite;
+        }
+        .heart::before, .heart::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: #ff4d79;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -15px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: 15px;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(-45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+        .box {
+            background: rgba(255,255,255,0.85);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(255, 70, 110, 0.25);
+            text-align: center;
+            z-index: 9;
+        }
+        h1 {
+            color: #ff4d79;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        p {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .sign {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #ff4d79;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<!-- 自动生成飘落爱心 -->
+<script>
+function createHeart(){
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random()*100 + 'vw';
+    heart.style.animationDuration = Math.random()*3 + 3 + 's';
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),5000);
+}
+setInterval(createHeart,300);
+</script>
+
+<div class="box">
+    <h1>💌 致金多贤</h1>
+    <p>从第一眼看见你的时候，</p>
+    <p>目光就再也没办法从你身上移开。</p>
+    <p>喜欢你的笑容，喜欢你的性格，</p>
+    <p>每一个瞬间都闪闪发光。</p>
+    <p>我不知道怎么形容这份心动，</p>
+    <p>但我想认真告诉你：</p>
+    <p style="font-size:24px; font-weight:bold; color:#ff4d79;">金多贤，我喜欢你。</p>
+    <p class="sign">希望可以一直陪着你 ❤</p>
+</div>
+
+</body>
+</html>
